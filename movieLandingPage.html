@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+   
+   <style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+
+
+}
+
+
+body{
+
+background-image:url('godzilla-2021_5334x3000_xtrafondos 2.png') ;
+
+background-repeat: no-repeat;
+
+background-size:cover;
+
+margin: 0 auto;
+
+width: 90%;
+
+color:white;
+
+}
+
+
+
+header{
+
+color: white;
+
+display:flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+width:100%;
+
+margin-bottom: 100px;
+
+}
+
+header button{
+
+background-color: transparent;
+
+text-align: center;
+
+color: white;
+
+font-size: 16px;
+
+
+}
+
+
+header .logo{
+
+width:135px;
+
+height: 30px;
+
+
+}
+
+
+header ul{
+
+display: flex;
+
+justify-content: space-between;
+
+list-style-type: none;
+
+}
+
+
+
+header ul li{
+
+
+margin:20px ;
+
+margin-top: 40px;
+
+
+}
+
+
+
+header ul li a{
+
+   color: white;
+
+text-decoration: none;
+
+display: flex;
+
+}
+
+
+
+
+
+header ul li a .searchinput{
+
+visibility:hidden;
+
+}
+
+
+
+header ul li a .searchinput2{
+
+
+visibility: visible;
+
+
+}
+
+
+
+
+.containerimages{
+
+   background-color: rgba(114, 113, 113, 0.553);
+
+   backdrop-filter: blur(5px);
+
+width: 100%;
+
+height: 286px;
+
+display: flex;
+
+justify-content: space-around;
+
+border-radius: 24px;
+
+padding: 20px;
+
+margin-bottom: 20px;
+
+}
+
+
+
+
+
+.containerimages img:hover{
+
+
+   transition:ease-in 3s;
+
+position: relative;
+
+bottom: 70px;
+
+height: 400px;
+
+width: 270px;
+
+
+}
+
+
+
+
+
+
+.starswarheading{
+
+
+   font-size: 70px;
+
+   margin-bottom: 10px;
+
+
+}
+
+
+
+h2{
+
+
+font-size: 50px;
+
+margin-top: 5px;
+
+margin-bottom: 5px;
+
+}
+
+
+
+p{
+
+
+   font-size: 28px;
+
+   margin-top: 20px;
+
+   margin-bottom: 20px;
+
+
+
+}
+
+
+i{
+
+
+margin-top: 10px;
+
+margin-bottom: 20px;
+
+}
+
+
+.buttonbox{
+
+   width: 337px;
+
+   height: 56px;
+
+   justify-content: space-between;
+
+display: flex;
+
+margin-bottom: 35px;
+
+
+}
+
+
+
+
+
+.playbtn{
+
+width: 193px;
+
+background-color: #FA4776;
+
+border-radius: 41px;
+
+color: white;
+
+}
+
+.tlrbtn{
+
+width:120px;
+
+background-color: transparent;
+
+color:white;
+
+border-radius: 41px;
+
+}
+
+
+
+
+.playbtn:hover{
+
+background-color: transparent;
+
+border: solid white 1px;
+
+}
+
+
+
+
+.tlrbtn:hover{
+
+background-color: transparent;
+
+border: solid white 1px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rating {
+   position: relative;
+   width: 180px;
+   background: transparent;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: .3em;
+   padding: 5px;
+   overflow: hidden;
+   border-radius: 20px;
+   
+}
+
+.rating__result {
+   position: absolute;
+   top: 0;
+   left: 0;
+   transform: translateY(-10px) translateX(-5px);
+   z-index: -9;
+   font: 3em Arial, Helvetica, sans-serif;
+   color: #ebebeb8e;
+   pointer-events: none;
+
+   display: none;
+}
+
+.rating__star {
+   font-size: 1.3em;
+   cursor: pointer;
+   color: #dabd18b2;
+   transition: filter linear .3s;
+}
+
+.rating__star:hover {
+   filter: drop-shadow(1px 1px 4px gold);
+}
+
+
+
+
+   </style>
+
+</head>
+<body>
+
+<header>
+
+<ul>
+
+<li><a href='#'>Movies </a></li>
+
+<li><a href='#'> Tv Shows </a></li>
+
+<li><a href='#'> Documentries</a></li>
+
+</ul>
+
+<img src="ApnaTV.png" class='logo' alt="img" />
+
+
+<ul>
+
+ 
+<ul>
+
+   <li id="searchbtn"><a href='#'> <input type="text" class="searchinput"  /><img src='eva_search-fill.png' /></a></li>
+   
+   <li><a href='#'><img src='Vector (2).png' class="subscribe" /></a></li>
+   
+   <li><button> Sign In</button></li>
+   
+   </ul>
+
+   
+   </ul>
+
+
+</header>
+
+
+
+
+
+
+
+<h1 class="starswarheading" id="itsheading1">STARS WARS</h1>
+
+<h2 class="heading2">THE RISE OF SKYWALKER</h2>
+
+<p class="paragraph1">The surviving members of the resistance face the First Order<br/> once again, and the legendary conflict between the Jedi and the<br/> Sith reaches its peak bringing the Skywalker saga to its end. </p>
+
+
+
+
+
+
+<div class="rating">
+
+   <span class="rating__result"></span> 
+
+  <i class="rating__star far fa-star"></i>
+  <i class="rating__star far fa-star"></i>
+  <i class="rating__star far fa-star"></i>
+  <i class="rating__star far fa-star"></i>
+  <i class="rating__star far fa-star"></i>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="buttonbox">
+
+<button class="playbtn">Watch Now</button>
+
+<button class="tlrbtn">Trailer</button>
+
+</div>
+
+
+<div class="containerimages">
+
+<img src="Rectangle 6.png" id='img1' alt="img" />
+
+<img src="Rectangle 7.png" id='img2' alt="img" />
+
+<img src="Rectangle 8.png" id='img3' alt="img" />
+
+<img src="Rectangle 9.png" id='img4' alt="img" />
+
+<img src="Rectangle 11.png" id='img5' alt="img" />
+
+<img src="Rectangle 12.png"id='img6'  alt="img" />
+
+</div>
+
+
+<script>
+
+
+const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+const ratingResult = document.querySelector(".rating__result");
+
+printRatingResult(ratingResult);
+
+function executeRating(stars, result) {
+   const starClassActive = "rating__star fas fa-star";
+   const starClassUnactive = "rating__star far fa-star";
+
+   const starsLength = stars.length;
+   let i;
+
+   stars.map((star) => {
+      star.onclick = () => {
+         i = stars.indexOf(star);
+
+         if (star.className.indexOf(starClassUnactive) !== -1) {
+            printRatingResult(result, i + 1);
+            for (i; i >= 0; --i) stars[i].className = starClassActive;
+         } else {
+            printRatingResult(result, i);
+            for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+         }
+      };
+   });
+}
+
+function printRatingResult(result, num = 0) {
+   result.textContent = `${num}/5`;
+}
+
+executeRating(ratingStars, ratingResult);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let heading1 = document.querySelector(".starswarheading")
+
+let heading2 = document.querySelector(".heading2")
+
+let para1 = document.querySelector(".paragraph1")
+
+
+let star = document.querySelectorAll("i")
+
+
+const searchbtn = document.getElementById('searchbtn')
+
+
+const img1 = document.getElementById('img1');
+
+const img2 = document.getElementById('img2');
+
+const img3 = document.getElementById('img3');
+
+const img4 = document.getElementById('img4');
+
+const img5 = document.getElementById('img5');
+
+const img6 = document.getElementById('img6');
+
+
+
+
+
+const searchinput = document.querySelector(".searchinput")
+
+
+searchbtn.addEventListener('click', event =>{
+
+
+   searchinput.classList.toggle('searchinput2')
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+img1.addEventListener('click', event =>{
+
+
+   document.body.style.backgroundImage = "url('captain_america_should_stay_in_the_past.jpg')";
+
+     heading1.textContent="CAPTAIN AMERICA"
+
+     heading2.textContent='THE FIRST AVENGER'
+
+     para1.innerHTML.value ='para1'
+
+})
+
+
+
+
+
+
+
+img2.addEventListener('click', event =>{
+
+
+document.body.style.backgroundImage = "url('godzilla-2021_5334x3000_xtrafondos 2.png')";
+
+  heading1.textContent="STAR WARZ"
+
+  heading2.textContent='THE RISE OF SKYWALKERS'
+
+  para1.innerHTML.value ='para1'
+
+})
+
+
+
+
+
+
+
+
+img3.addEventListener('click', event =>{
+
+
+document.body.style.backgroundImage = "url('uncharted-2.jpeg')";
+
+
+  heading1.textContent="THE UNCHARTED"
+
+  heading2.textContent='THE UNCHARTED MOVIE '
+
+  para1.innerHTML.value ='para1'
+
+})
+
+
+
+
+
+
+
+img4.addEventListener('click', event =>{
+
+
+document.body.style.backgroundImage = "url('pTmvVqg.jpg')";
+
+
+  heading1.textContent="STAR WARZ"
+
+  heading2.textContent='THE LAST JEDI'
+
+
+  para1.innerHTML.value ='para1'
+})
+
+
+
+
+
+
+
+
+
+
+img5.addEventListener('click', event =>{
+
+
+document.body.style.backgroundImage = "url('scale.jpg')";
+
+
+  heading1.textContent="AVENGERS ENDGAME"
+
+  heading2.textContent='THE AVENGERS ENDGAME'
+
+  para1.innerHTML.value ='para1'
+
+})
+
+
+
+
+
+
+
+
+img6.addEventListener('click', event =>{
+
+
+document.body.style.backgroundImage = "url('1282348-h-2f597776e304.webp')";
+
+
+  heading1.textContent="SPIDER MEN"
+
+  heading2.textContent='SPIDER MEN 1'
+
+
+  para1.innerHTML.value ='para1'
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+img1.addEventListener('mouseover', event =>{
+
+
+document.body.style.backgroundImage = "url('captain_america_should_stay_in_the_past.jpg')";
+
+  heading1.textContent="CAPTAIN AMERICA"
+
+  heading2.textContent='THE FIRST AVENGER'
+
+  para1.innerHTML.value ='para1'
+
+})
+
+
+
+
+
+
+
+img2.addEventListener('mouseover', event =>{
+
+
+document.body.style.backgroundImage = "url('godzilla-2021_5334x3000_xtrafondos 2.png')";
+
+heading1.textContent="STAR WARZ"
+
+heading2.textContent='THE RISE OF SKYWALKERS'
+
+para1.innerHTML.value ='para1'
+
+})
+
+
+
+
+
+
+
+
+img3.addEventListener('mouseover', event =>{
+
+
+document.body.style.backgroundImage = "url('uncharted-2.jpeg')";
+
+
+heading1.textContent="THE UNCHARTED"
+
+heading2.textContent='THE UNCHARTED MOVIE '
+
+para1.innerHTML.value ='para1'
+
+})
+
+
+
+
+
+
+
+img4.addEventListener('mouseover', event =>{
+
+
+document.body.style.backgroundImage = "url('pTmvVqg.jpg')";
+
+
+heading1.textContent="STAR WARZ"
+
+heading2.textContent='THE LAST JEDI'
+
+
+para1.innerHTML.value ='para1'
+})
+
+
+
+
+
+
+
+
+
+
+img5.addEventListener('mouseover', event =>{
+
+
+document.body.style.backgroundImage = "url('scale.jpg')";
+
+
+heading1.textContent="AVENGERS ENDGAME"
+
+heading2.textContent='THE AVENGERS ENDGAME'
+
+para1.innerHTML.value ='para1'
+
+})
+
+
+
+
+
+
+
+
+img6.addEventListener('mouseover', event =>{
+
+
+document.body.style.backgroundImage = "url('1282348-h-2f597776e304.webp')";
+
+
+heading1.textContent="SPIDER MEN"
+
+heading2.textContent='SPIDER MEN 1'
+
+
+para1.innerHTML.value ='para1'
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+    
+</body>
+</html>
